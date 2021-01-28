@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 40px;
+}
+
+#moviesCountersContainer {
+  grid-column: 6;
+  margin-bottom: 100px;
+}
+
+#moviesCountersContainer > p > span {
+  font-weight: bold;
+}
+
+#moviesListContainer {
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
