@@ -14,7 +14,7 @@ body {
   font-size: 30px;
 }
 
-#moviesCountersContainer > p > span {
+#moviesCountersContainer p span {
   font-weight: bold;
 }
 
@@ -25,22 +25,46 @@ ul {
   grid-column: 2;
 }
 
-ul > li {
+.listElement {
   border: 5px solid #666;
   grid-column: 2;
   margin-bottom: 50px;
   padding: 10px 40px;
   transition: 0.3s ease-in-out;
   background-color: #444;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
-ul > li:hover {
+.listElement:hover {
   background-color: #666;
 }
-ul > li > p {
+
+.listElement p {
   font-size: 20px;
+  color: #bbb;
 }
-img {
-  width: 22px;
+
+.status {
+  position: relative;
+}
+
+.status span {
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 40px;
+  top: 6px;
+  left: 75px;
+}
+
+.status span:hover {
+  cursor: pointer;
+}
+
+.seen {
+  background-image: url(img/eye_seen.svg);
+}
+
+.unseen {
+  background-image: url(img/eye_unseen.svg);
 }
