@@ -3,27 +3,44 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-  gap: 40px;
-  background-color: #343434;
+  background-color: #212121;
   color: white;
 }
 
 #moviesCountersContainer {
-  grid-column: 6;
   margin-bottom: 100px;
+  padding-right: 50px;
+  text-align: right;
+  font-size: 30px;
 }
 
 #moviesCountersContainer > p > span {
   font-weight: bold;
 }
 
-#moviesListContainer {
-  grid-column-start: 2;
-  grid-column-end: 6;
-}
 ul {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-column: 2;
+}
+
+ul > li {
+  border: 5px solid #666;
+  grid-column: 2;
+  margin-bottom: 50px;
+  padding: 10px 40px;
+  transition: 0.3s ease-in-out;
+  background-color: #444;
+  border-radius: 15px;
+}
+
+ul > li:hover {
+  background-color: #666;
+}
+ul > li > p {
+  font-size: 20px;
+}
+img {
+  width: 22px;
 }
