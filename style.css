@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
 }
-
 body {
   background-color: #212121;
   color: white;
@@ -26,22 +26,21 @@ ul {
 }
 
 .listElement {
-  border: 5px solid #666;
+  border: 5px solid #333;
   grid-column: 2;
   margin-bottom: 50px;
   padding: 10px 40px;
-  transition: 0.3s ease-in-out;
-  background-color: #444;
+  transition: 0.1s ease-in-out;
   border-radius: 5px;
 }
 
 .listElement:hover {
-  background-color: #666;
+  background-color: #333;
 }
 
 .listElement p {
   font-size: 20px;
-  color: #bbb;
+  color: #ccc;
 }
 
 .status {
@@ -50,11 +49,12 @@ ul {
 
 .status span {
   position: absolute;
-  background-repeat: no-repeat;
+  top: 6px;
+  margin-left: 10px;
   height: 24px;
   width: 40px;
-  top: 6px;
-  left: 75px;
+  background-repeat: no-repeat;
+  transition: 0.1s ease-in;
 }
 
 .status span:hover {

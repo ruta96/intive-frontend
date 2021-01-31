@@ -1,7 +1,6 @@
 allCounter = moviesData.length;
 let watchStatus = '';
 
-
 //count seen movies
 const countSeen = () => {
     let seenCoutner = 0
@@ -10,11 +9,9 @@ const countSeen = () => {
         seenCoutner++;
         }
     });
-
-
-    
 document.getElementById("moviesCounterSeen").innerHTML = seenCoutner;
 };
+
 
 //first initialize of function counting seen movies
 countSeen();
@@ -36,7 +33,7 @@ document.getElementById("moviesCounterAll").innerHTML = allCounter;
         document.getElementById('moviesList').innerHTML += (
             `<li class="listElement">
                     <h1>${elem.title}</h1>
-                    <h2 class="status">status: <span class="${watchStatus}" id="${index}" onclick="changeStatus(this.id, this.className)"></span></h2>
+                    <h2 class="status">status: ${watchStatus}<span class="${watchStatus}" id="${index}"></span></h2>
                     <h2>year: ${elem.year}</h2>
                     <h2>genre: ${elem.genre}</h2>
                     <h2>description:</h2><p>${elem.summary}</p>
@@ -44,16 +41,18 @@ document.getElementById("moviesCounterAll").innerHTML = allCounter;
             )
     });
 
- //onclick handle  
- //change img of seen status on page | change value on key seen in table moviesData 
- const changeStatus = (id, elementClass) => {
-    if (elementClass === "seen"){
-        moviesData[id].seen = "F";
-        document.getElementById(id).className ="unseen";
+//handle onclick
+//change status img and value in table at key seen
+    for(let i = 0; i<moviesData.length; i++){
+        document.getElementById(i).addEventListener('click',function () {
+           if (this.className === "seen"){
+               moviesData[this.id].seen = "F";
+               this.className ="unseen";
+           }
+           else {
+               moviesData[this.id].seen = "T";
+               this.className = "seen";
+           }
+           countSeen();
+        });
     }
-    else {
-        moviesData[id].seen = "T";
-        document.getElementById(id).className ="seen";
-    }
-    countSeen();
-}   

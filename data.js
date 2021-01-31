@@ -1,4 +1,4 @@
-const moviesData = [
+var moviesData = [
     {
         "id": 1,
         "title": "The Shawshank Redemption",
