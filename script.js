@@ -33,7 +33,7 @@ document.getElementById("moviesCounterAll").innerHTML = allCounter;
         document.getElementById('moviesList').innerHTML += (
             `<li class="listElement">
                     <h1>${elem.title}</h1>
-                    <h2 class="status">status: ${watchStatus}<span class="${watchStatus}" id="${index}"></span></h2>
+                    <h2 class="status">status: <span class="${watchStatus}" id="${index}"></span></h2>
                     <h2>year: ${elem.year}</h2>
                     <h2>genre: ${elem.genre}</h2>
                     <h2>description:</h2><p>${elem.summary}</p>
