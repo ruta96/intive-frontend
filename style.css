@@ -26,6 +26,7 @@ ul {
 }
 
 .listElement {
+  position: relative;
   border: 5px solid #333;
   grid-column: 2;
   margin-bottom: 50px;
@@ -38,14 +39,10 @@ ul {
   background-color: #333;
 }
 
-.listElement h1 {
-  position: relative;
-}
-
-h1 span {
+.listElement div {
   position: absolute;
-  top: -25px;
-  right: -25px;
+  top: 38px;
+  right: 20px;
   margin-left: 10px;
   height: 30px;
   width: 50px;
@@ -53,8 +50,12 @@ h1 span {
   transition: 0.1s ease-in;
 }
 
-h1 span:hover {
+.listElement div:hover {
   cursor: pointer;
+}
+
+.listElement h1 {
+  padding-right: 35px;
 }
 
 .desc {
@@ -72,6 +73,6 @@ h1 span:hover {
   background-image: url(img/eye_seen.svg);
 }
 
-.unseen {
-  background-image: url(img/eye_unseen.svg);
+.not-seen {
+  background-image: url(img/eye_not-seen.svg);
 }
