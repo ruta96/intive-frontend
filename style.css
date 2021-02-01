@@ -38,27 +38,34 @@ ul {
   background-color: #333;
 }
 
-.listElement p {
-  font-size: 20px;
-  color: #ccc;
-}
-
-.status {
+.listElement h1 {
   position: relative;
 }
 
-.status span {
+h1 span {
   position: absolute;
-  top: 6px;
+  top: -25px;
+  right: -25px;
   margin-left: 10px;
-  height: 24px;
-  width: 40px;
+  height: 30px;
+  width: 50px;
   background-repeat: no-repeat;
   transition: 0.1s ease-in;
 }
 
-.status span:hover {
+h1 span:hover {
   cursor: pointer;
+}
+
+.desc {
+  border: 2px solid white;
+  padding: 20px;
+}
+
+.desc p {
+  font-size: 20px;
+  color: #ccc;
+  font-weight: normal;
 }
 
 .seen {

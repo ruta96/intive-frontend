@@ -1,42 +1,37 @@
-allCounter = moviesData.length;
-let watchStatus = '';
+let watchStatus;
 
-//count seen movies
-const countSeen = () => {
+//count seen and all movies
+const countMovies = () => {
     let seenCoutner = 0
     moviesData.forEach( elem => {
         if (elem.seen == "T"){
         seenCoutner++;
         }
     });
+//send value of counters to html element
+document.getElementById("moviesCounterAll").innerHTML = moviesData.length;
 document.getElementById("moviesCounterSeen").innerHTML = seenCoutner;
 };
 
-
 //first initialize of function counting seen movies
-countSeen();
-
-//send value of counters to html
-document.getElementById("moviesCounterAll").innerHTML = allCounter;
-
+countMovies();
 
 //load data to html
     moviesData.forEach((elem, index) => {
-        
-//initial class assigment for seen and unseen movies
+    //initial class assigment for seen and unseen movies
         if (elem.seen === "T")
             watchStatus = "seen"
         else
             watchStatus ="unseen"
 
-//template of list element
+        //template of list element
         document.getElementById('moviesList').innerHTML += (
             `<li class="listElement">
-                    <h1>${elem.title}</h1>
-                    <h2 class="status">status: <span class="${watchStatus}" id="${index}"></span></h2>
+                    <h1>${elem.title}<span class="${watchStatus}" id="${index}"></span></h1>
+                    <hr>
                     <h2>year: ${elem.year}</h2>
                     <h2>genre: ${elem.genre}</h2>
-                    <h2>description:</h2><p>${elem.summary}</p>
+                    <h2 class="desc">description:<p>${elem.summary}</p></h2>
             </li>`
             )
     });
@@ -53,6 +48,6 @@ document.getElementById("moviesCounterAll").innerHTML = allCounter;
                moviesData[this.id].seen = "T";
                this.className = "seen";
            }
-           countSeen();
+           countMovies();
         });
     }
