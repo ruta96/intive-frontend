@@ -16,15 +16,16 @@ moviesData.forEach((elem, index) => {
         watchStatus ="not-seen"
     }
     //template of single list element
-    document.getElementById('moviesList').innerHTML += (`
-        <li class="listElement">
-            <h1>${elem.title} (${elem.year})</h1>
-            <div class="${watchStatus}" id="${index}"></div>
-            <h2 class="genre">${elem.genre}</h2>
-            <hr>
-            <p>${elem.summary}</p>
-        </li>
-        `)
+    const li = document.createElement("li");
+    li.className = "listElement";
+    li.innerHTML = (`
+    <h1>${elem.title} (${elem.year})</h1>
+    <div class="${watchStatus}" id="${index}"></div>
+    <h2 class="genre">${elem.genre}</h2>
+    <hr>
+    <p>${elem.summary}</p>
+    `);
+    document.getElementById('moviesList').appendChild(li);
 });
 
 //handle onclick
